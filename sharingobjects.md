@@ -26,4 +26,4 @@
     
     2)该变量不会与其他状态变量一起纳入不变性条件中。应该是不鼓励使用,参见SO上[这个帖子](http://stackoverflow.com/questions/9868577/how-to-comprehend-thevariabledoes-notparticipatein-invariantswith-otherst)
     
-    3)在访问变量时不需要加锁。
+    3)在访问变量时不需要加锁。 
