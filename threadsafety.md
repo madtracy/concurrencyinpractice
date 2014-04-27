@@ -12,11 +12,23 @@
 3.无状态对象
     既不包含任何域，也不包含任何对其他类中域的引用。
     无状态对象一定是线程安全的：因为它没有状态，所以不存在状态被修改的问题。
-    	
     无状态的类中添加一个完全由线程安全的对象管理的状态时，那么这个类仍然是线程安全的。
-    	
-    	
     
+```java	
+    @ThreadSafe
+    public class CountingFactorizer implements Servlet{
+        private final AtomicLong count = new AtomicLong(0);
+        
+        public long getCount(){return count.get();}
+        
+        public void service(ServletRequest req, ServletReponse resp){
+            BigInteger i = extractFromRequest(req);
+            BigInteger[] factors = factor(i);
+            counte.incrementAndGet();
+            encodeIntoResponse(resp, factors);
+        }
+    }
+```    
 4.原子性
     不可分割的操作称为原子操作：一个线程在进行一个操作时，一旦开始了，就一定会完成它，并且过程中CPU不会切换到其他线程。
     
