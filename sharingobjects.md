@@ -21,7 +21,6 @@
 ```
   
   当且仅当满足以下所有条件时，才应该使用volatile：
-  
     1)对变量的写入不依赖变量的当前值，或者你能确保只有单个线程更新变量的值
     
     2)该变量不会与其他状态变量一起纳入不变性条件中。应该是不鼓励使用,参见SO上[这个帖子](http://stackoverflow.com/questions/9868577/how-to-comprehend-thevariabledoes-notparticipatein-invariantswith-otherst)
